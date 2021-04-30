@@ -1,0 +1,6 @@
+.u-p3rem {
+    padding: 3rem;
+    @include mq() {
+        padding: 3rem 0;
+    }
+}

@@ -1,0 +1,10 @@
+// マップ型変数
+$breakpoints: (
+    "sm": "screen and (max-width: 560px)"
+) !default;
+
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
