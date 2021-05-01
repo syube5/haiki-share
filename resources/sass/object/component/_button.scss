@@ -22,7 +22,13 @@
     }
     &--blue {
         color: #fff;
-        background-color: $blue;
-        border-color: $blue;
+        background-color: $lightblue;
+        border-color: $lightblue;
+        &:hover {
+            color: #fff;
+            background-color: #2578ff;
+            border-color: #1871ff;
+            box-shadow: 0 0 0 0.2rem rgb(102 161 255 / 50%);
+        }
     }
 }
