@@ -10,7 +10,7 @@
         <div class="p-form__body">
             <div class="p-form__title">会員情報登録</div>
 
-            <form method="POST" action="{{ route('register') }}" class="u-p3rem">
+            <form method="POST" action="{{ route('register') }}" class="u-p9">
                 @csrf
 
                 <div class="form-group u-mb3">

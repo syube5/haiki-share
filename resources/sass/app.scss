@@ -13,6 +13,7 @@
 // Layout
 // ==================================
 @import "./layout/form";
+@import "./layout/row";
 
 // ==================================
 // Object
@@ -26,7 +27,7 @@
 /* Project
    ----------------------------------------------------------------- */
 @import "./object/project/form";
-@import "./layout/row";
+@import "./object/project/alert";
 
 /* Utility
    ----------------------------------------------------------------- */
@@ -34,4 +35,4 @@
 @import "./object/utility/margin";
 
 // Bootstrap
-//@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
