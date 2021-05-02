@@ -45,6 +45,10 @@
             outline: 0;
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
+        &::before,
+        &::after {
+            box-sizing: border-box;
+        }
         &.error {
             border-color: #e3342f;
             padding-right: calc(1.6em + 0.75rem);
@@ -57,6 +61,16 @@
         color: #e3342f;
         @include mq() {
             font-size: 70%;
+        }
+    }
+    &__check {
+        position: relative;
+        display: block;
+        padding-left: 1.25rem;
+        &--input {
+            position: absolute;
+            margin-top: 0.3rem;
+            margin-left: -1.25rem;
         }
     }
 }

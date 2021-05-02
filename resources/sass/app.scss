@@ -21,6 +21,7 @@
 /* Component
    ----------------------------------------------------------------- */
 @import "./object/component/button";
+@import "./object/component/label";
 
 /* Project
    ----------------------------------------------------------------- */
@@ -33,4 +34,4 @@
 @import "./object/utility/margin";
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
