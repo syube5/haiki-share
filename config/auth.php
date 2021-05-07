@@ -13,8 +13,9 @@ return [
     |
     */
 
+    // デフォルトの認証をwebからuserに変更
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -36,9 +37,14 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        // Conveniencestore用の認証を追加
+        'conveniencestore' => [
+            'driver' => 'session',
+            'provider' => 'conveniencestores',
         ],
 
         'api' => [
@@ -71,6 +77,11 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        'conveniencestores' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Conveniencestore::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -97,7 +108,15 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+            'throttle' => 60,
         ],
+
+        'conveniencestores' => [
+            'provider' => 'conveniencestores',
+            'table' => 'conveniencestore_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ]
     ],
 
 ];

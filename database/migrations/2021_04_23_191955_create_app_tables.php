@@ -15,8 +15,9 @@ class CreateAppTables extends Migration
     {
         Schema::create('conveniencestores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('conveniencestore_name');
             $table->string('branch');
+            $table->string('zip');
             $table->string('address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -52,6 +52,10 @@
         &.error {
             border-color: #e3342f;
             padding-right: calc(1.6em + 0.75rem);
+            &:focus {
+                border-color: #e3342f;
+                box-shadow: 0 0 0 0.2rem rgb(227 52 47 / 25%);
+            }
         }
     }
     &--feedback {

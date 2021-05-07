@@ -18,3 +18,40 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// ユーザー
+Route::namespace('User')->prefix('user')->name('user.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => true,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:user')->group(function () {
+
+        // TOPページ
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
+});
+
+// コンビニ
+Route::namespace('Conveniencestore')->prefix('conveniencestore')->name('conveniencestore.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => true,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:conveniencestore')->group(function () {
+
+        // TOPページ
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
+});

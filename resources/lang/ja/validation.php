@@ -76,7 +76,7 @@ return [
         'array'   => ':attributeの項目数は、:value個以下でなければなりません。',
     ],
     'max' => [
-        'numeric' => ':attributeには、:max以下の数字を指定してください。',
+        'numeric' => ':attributeは、:max桁の数字を入力してください。',
         'file'    => ':attributeには、:max KB以下のファイルを指定してください。',
         'string'  => ':attributeは、:max文字以下にしてください。',
         'array'   => ':attributeの項目は、:max個以下にしてください。',
@@ -145,5 +145,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'ニックネーム',
+        'conveniencestore_name' => 'コンビニ名',
+        'branch' => '支店名',
+        'zip' => '郵便番号',
+        'address' => '住所',
+        'password' => 'パスワード',
+    ],
 ];

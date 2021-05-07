@@ -1,5 +1,8 @@
 .l-form {
     height: 100vh;
+    &--space {
+        height: 110vh;
+    }
     @include mq() {
         height: 115vh;
     }
@@ -8,5 +11,11 @@
         align-items: center;
         justify-content: center;
         display: flex;
+        &--space {
+            height: 110%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
     }
 }

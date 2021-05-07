@@ -1,0 +1,94 @@
+@extends('layouts.conveniencestore.app_only_content_space')
+
+@section('title')
+    会員登録
+@endsection
+
+@section('content')
+<div class="container">
+    <div class="p-form">
+        <div class="p-form__body">
+            <div class="p-form__title">会員情報登録</div>
+
+            <form method="POST" action="{{ route('conveniencestore.register') }}" class="u-p9">
+                @csrf
+
+                <div class="form-group u-mb3">
+                    <label for="conveniencestore_name" class="c-label">コンビニ名</label>
+                    <input id="conveniencestore_name" type="text" class="p-form__control @error('conveniencestore_name') error @enderror" name="conveniencestore_name" value="{{ old('conveniencestore_name') }}" required autocomplete="conveniencestore_name" autofocus placeholder="○○コンビニ">
+                    @error('conveniencestore_name')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="branch" class="c-label">支店名</label>
+                    <input id="branch" type="text" class="p-form__control @error('branch') error @enderror" name="branch" value="{{ old('branch') }}" required autocomplete="branch" autofocus placeholder="○○支店">
+                    @error('branch')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="zip" class="c-label">郵便番号</label>
+                    <input id="zip" type="number" class="p-form__control @error('zip') error @enderror" name="zip" value="{{ old('zip') }}" required autocomplete="zip" autofocus placeholder="0000000 ハイフンなし" maxlength="7">
+                    @error('zip')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="address" class="c-label">住所</label>
+                    <input id="address" type="text" class="p-form__control @error('address') error @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                    @error('address')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="email" class="c-label">メールアドレス</label>
+                    <input id="email" type="email" class="p-form__control @error('email') error @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="abc@example.com">
+                    @error('email')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="password" class="c-label">パスワード</label>
+                    <input id="password" type="password" class="p-form__control @error('password') error @enderror" name="password" required autocomplete="new-password">
+                    @error('password')
+                        <span class="p-form--feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group u-mb3">
+                    <label for="password-confirm" class="c-label">パスワード確認</label>
+                    <input id="password-confirm" type="password" class="p-form__control" name="password_confirmation" required autocomplete="new-password">
+                </div>
+
+                <div class="form-group u-mb3">
+                    <button type="submit" class="c-button c-button__block c-button--blue">
+                        会員登録
+                    </button>
+                </div>
+
+                <div>
+                    アカウントをお持ちの方は<a href="{{ route('conveniencestore.login') }}">こちら</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endsection
