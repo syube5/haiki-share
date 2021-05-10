@@ -35,6 +35,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
         // TOPページ
         Route::get('/home', 'HomeController@index')->name('home');
+        // マイページ編集
+        Route::get('/edit-profile', 'ProfileController@showProfileEditForm')->name('edit-profile');
     });
 });
 

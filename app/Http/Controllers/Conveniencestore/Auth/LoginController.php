@@ -23,11 +23,11 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     * Where to redirect conveniencestores after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/conveniencestore/home';
 
     /**
      * Create a new controller instance.

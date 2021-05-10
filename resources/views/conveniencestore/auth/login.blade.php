@@ -10,7 +10,7 @@
         <div class="p-form__body">
             <div class="p-form__title">ログイン</div>
 
-            <form method="POST" action="{{ route('login') }}" class="u-p9">
+            <form method="POST" action="{{ route('conveniencestore.login') }}" class="u-p9">
                 @csrf
 
                 <div class="form-group u-mb3">
