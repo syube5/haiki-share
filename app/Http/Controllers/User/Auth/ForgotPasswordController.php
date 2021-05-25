@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\User\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Support\Facades\Password;
 
 class ForgotPasswordController extends Controller
 {
@@ -31,6 +30,19 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest:user');
+    }
+
+    public function sendResetLinkEmail(Request $request)
+    {
+        $this->validateEmail($request);
+
+        $response = $this->broker()->sendResetLink(
+            $request->only('email')
+        );
+
+        return $response == Password::RESET_LINK_SENT
+            ? response()->json(['message' => 'Reset link sent to your email.', 'status' => true], 201)
+            : response()->json(['message' => 'Unable to send reset link', 'status' => false], 401);
     }
 
     // 一般ユーザ用のviewを指定

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class ProfileController extends Controller
+class EditProfileController extends Controller
 {
     public function showProfileEditForm()
     {

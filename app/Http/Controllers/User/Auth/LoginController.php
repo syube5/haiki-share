@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/user/home';
+    protected $redirectTo = '/user';
 
     /**
      * Create a new controller instance.
@@ -60,8 +60,21 @@ class LoginController extends Controller
     }
 
     // ログアウトした時のリダイレクト先
-    public function loggedOut(Request $request)
+    //public function loggedOut(Request $request)
+    //{
+    //  return redirect(route('user.login'));
+    //}
+
+    protected function authenticated(Request $request, $user)
     {
-        return redirect(route('user.login'));
+        return $user;
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        // セッションを再生成する
+        $request->session()->regenerate();
+
+        return response()->json();
     }
 }

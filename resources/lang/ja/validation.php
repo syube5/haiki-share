@@ -146,7 +146,8 @@ return [
     */
 
     'attributes' => [
-        'name' => 'ニックネーム',
+        'name' => '名前',
+        'email' => 'メールアドレス',
         'conveniencestore_name' => 'コンビニ名',
         'branch' => '支店名',
         'zip' => '郵便番号',

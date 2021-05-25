@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check() && $guard === 'user') {
-            return redirect('user/home');
+            return redirect()->route('user');;
         } elseif (Auth::guard($guard)->check() && $guard === 'conveniencestore') {
             return redirect('conveniencestore/home');
         }

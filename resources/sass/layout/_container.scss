@@ -1,0 +1,15 @@
+.l-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 2%;
+    min-height: 80vh;
+    overflow: hidden;
+    position: relative;
+    &--small {
+        margin: 0 auto;
+        width: 600px;
+        position: absolute;
+        top: -70px;
+        left: 300px;
+    }
+}
