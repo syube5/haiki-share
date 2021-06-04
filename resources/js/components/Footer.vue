@@ -1,15 +1,17 @@
 <template>
     <footer class="l-footer">
-        <button v-if="isLogin" class="c-button c-button--link" @click="logout">
+        <!--<button v-if="isLogin" class="c-button c-button--link" @click="logout">
             Logout
         </button>
         <RouterLink v-else class="c-button c-button--link" to="/user/login">
             Login / Register
-        </RouterLink>
+        </RouterLink> -->
+        Copyright <router-link to="/">Haiki_share</router-link>. All Rights
+        Reserved.
     </footer>
 </template>
 
-<script>
+<!--<script>
 import { mapState, mapGetters } from "vuex";
 
 export default {
@@ -30,4 +32,4 @@ export default {
         }
     }
 };
-</script>
+</script>-->

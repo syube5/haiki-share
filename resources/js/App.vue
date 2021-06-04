@@ -6,9 +6,13 @@ import { INTERNAL_SERVER_ERROR } from './util'
             <Header />
         </header>
         <main>
-            <div class="l-container">
-                <Message />
-                <RouterView />
+            <div class="l-form">
+                <div class="l-form__content">
+                    <div class="l-row--middle">
+                        <Message />
+                        <RouterView />
+                    </div>
+                </div>
             </div>
         </main>
         <Footer />

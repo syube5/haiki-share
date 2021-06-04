@@ -1,0 +1,36 @@
+.l-menu {
+    background-color: rgba(197, 197, 197, 0.671);
+    z-index: 30;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 20rem;
+    height: 80rem;
+    top: 0;
+    right: 0;
+    &__name {
+        margin-left: 1rem;
+        color: $black;
+    }
+    &__list {
+        margin: 1rem;
+        padding: 0;
+    }
+    &__item {
+        list-style: none;
+        line-height: 1;
+        padding: 1rem;
+        &--link {
+            color: $black;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0 2rem;
+            transition: 0.3s;
+            &:visited {
+                color: inherit;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}

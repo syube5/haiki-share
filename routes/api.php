@@ -14,7 +14,7 @@ Route::get('/user/password/reset/{token}', 'User\Auth\ResetPasswordController@sh
 
 Route::post('/user/password/reset/', 'User\Auth\ResetPasswordController@reset')->name('reset');
 
-Route::get('/user/edit-profile', 'User\Auth\EditProfileController@profileEdit')->name('user.edit-profile');
+Route::patch('/user/edit-profile', 'User\EditProfileController@editProfile')->name('user.edit-profile');
 
 // ログインユーザー
 Route::get('/user', function () {

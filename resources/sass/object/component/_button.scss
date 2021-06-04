@@ -37,4 +37,7 @@
             box-shadow: 0 0 0 0.2rem rgb(102 161 255 / 50%);
         }
     }
+    &__pointer {
+        cursor: pointer;
+    }
 }

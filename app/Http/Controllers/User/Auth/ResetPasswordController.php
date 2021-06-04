@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\User\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
 {
@@ -16,7 +17,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -34,15 +35,7 @@ class ResetPasswordController extends Controller
         return Auth::guard('user');
     }
 
-    public function showResetForm(Request $request, $token = null)
-    {
-        return redirect("/user/password/reset/{token}")->with([
-            'token' => $token,
-            'email' => $request->email
-        ]);
-    }
-
-    public function reset(Request $request)
+    /*public function reset(Request $request)
     {
         $request->validate($this->rules(), $this->validationErrorMessages());
         $response = $this->broker()->reset(
@@ -54,15 +47,15 @@ class ResetPasswordController extends Controller
         return $response == Password::PASSWORD_RESET
             ? new JsonResponse('Password Reset')
             : new JsonResponse(["error" => "error"]);
-    }
+    }*/
 
-    protected function rules()
+    /*protected function rules()
     {
         return [
             'token' => 'required',
             'password' => 'required|confirmed|min:8',
         ];
-    }
+    }*/
 
     /*public function showResetForm(Request $request, $token = null)
     {

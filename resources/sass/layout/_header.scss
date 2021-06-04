@@ -20,14 +20,18 @@
         font-weight: bold;
         font-size: 1.2rem;
         text-decoration: none;
+        transition: 0.3s;
+        &:visited {
+            color: inherit;
+        }
+        &:hover {
+            opacity: 0.6;
+        }
     }
     &__menu {
         -webkit-box-align: center;
         align-items: center;
         display: -webkit-box;
         display: flex;
-    }
-    &__item {
-        margin-left: 1rem;
     }
 }

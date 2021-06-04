@@ -3,15 +3,21 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\User\EditRequest;
 
 
 class EditProfileController extends Controller
 {
-    public function showProfileEditForm()
+    public function editProfile(EditRequest $request)
     {
-        return view('user.profile_edit_form')
-            ->with('user', Auth::user());
+        $user = Auth::user();
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        return $user->save()
+            ? response()->json(['status' => true], 201)
+            : response()->json(['status' => false], 401);
     }
 }

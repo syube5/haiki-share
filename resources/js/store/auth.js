@@ -58,7 +58,7 @@ const mutations = {
     },
     //プロフィール編集エラーメッセージの更新
     setEditErrorMessages(state, messages) {
-        state.resetErrorMessages = messages;
+        state.editErrorMessages = messages;
     }
 };
 
@@ -88,7 +88,7 @@ const actions = {
     },
 
     // ユーザー会員登録
-    async userRegister(context, data) {
+    async register(context, data) {
         // apiStatusのクリア
         context.commit("setApiStatus", null);
         // Apiリクエスト
@@ -193,11 +193,11 @@ const actions = {
     },
 
     // ユーザープロフィール編集
-    async userEdit(context, data) {
+    async edit(context, data) {
         // apiStatusのクリア
         context.commit("setApiStatus", null);
         // Apiリクエスト
-        const response = await axios.post("/api/user/edit-profile", data);
+        const response = await axios.patch("/api/user/edit-profile", data);
 
         if (response.status === CREATED) {
             context.commit("setApiStatus", true);

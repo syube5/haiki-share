@@ -1,0 +1,30 @@
+.l-hamburger__btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 50;
+    &--line {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 32px;
+        height: 2px;
+        background: $black;
+        text-align: center;
+        &.line_01 {
+            top: 16px;
+            transition: 0.4s ease;
+        }
+        &.line_02 {
+            top: 26px;
+            transition: 0.4s ease;
+        }
+        &.line_03 {
+            top: 36px;
+            transition: 0.4s ease;
+        }
+    }
+}
